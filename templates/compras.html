@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block conteudo %}
+
+<h3>Adicionar Item</h3>
+<form action="comprasAdicionar.php" method="post">
+    <input type="text" name="item">
+    <input type="submit" value='Adicionar'>
+</form>
+
+<h1>Lista de compras</h1>
+
+{% for compra in compras %}
+<li>{{compra['item']}} <button onclick="removeItem({{compra['id']}})" type="submit">X</button> <button onclick="atualizarItem({{compra['id']}})" type="submit">Editar</button></li>
+    
+{% endfor %}
+
+
+<script src="JS/script.js"></script>
+{% endblock %}
