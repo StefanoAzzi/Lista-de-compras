@@ -1,5 +1,5 @@
 <?php 
-require('twigCarregar.php');
+require('twig_carregar.php');
 require('inc/banco.php');
 
 $dados = $pdo->query('SELECT * FROM compras');

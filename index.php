@@ -2,7 +2,7 @@
 // index.php
 
 // Carrega o carregador do Twig
-require_once('twigCarregar.php');
+require('twig_carregar.php');
 
 // Mostra o template na tela
 echo $twig->render('index.html', [

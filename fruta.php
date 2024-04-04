@@ -2,7 +2,7 @@
 // fruta.php
 
 // Carrega o carregador do Twig
-require('twigCarregar.php');
+require('twig_carregar.php');
 
 $frutas = [
     'Abacaxi',
