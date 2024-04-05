@@ -9,18 +9,18 @@ $dados = $pdo->query('SELECT * FROM compromissos');
 
 $compromissos = $dados->fetchAll(PDO::FETCH_ASSOC);
 
-foreach ($compromisso as $compromissos){
-    if (Carbon::parse($compromisso['data'])->isWeekend()){
-        $finalDeSemana = "Fim de semana";
-    } else {
-        $finalDeSemana = "Dia da semana";
+foreach ($compromisso as $index => $compromissos){
+    $dataConv = Carbon::parse($compromisso['data']);
+    if ($dataConv->isWeekend()){
+        $compromisso['fimDeSemana'] = "Fim de semana";
+        $compromissos[$index] = $compromisso;
+    } else { 
+        $compromisso['fimDeSemana'] = "Dia da semana";
+        $compromissos[$index] = $compromisso;
     }
 }
 
 echo $twig->render('compromissos.html' , [
     'titulo' => "Compromissos",
-    'compromissos' => $compromissos,
-    'hoje' => $hoje,
-    'finalDeSemana' => $finalDeSemana
-
+    'compromissos' => $compromissos
 ]);
