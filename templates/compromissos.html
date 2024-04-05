@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<h2>Deseja adicionar novos compromissos?</h2>
+<form action="compromissosAdicionar.php" method="post">
+    <p> 
+        <label for="descricao">Descrição: </label>  
+        <input type="text" name="descricao">
+    </p>
+    <p>
+        <label for="data">Data: </label>
+        <input type="date" name="data">
+    </p>
+    <input type="submit" value='Adicionar'>
+</form>
+<hr>
+<h1>Lista de compromissos</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Data</th>
+            <th>Descrição</th>
+            <th>Fim de semana</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for compromisso in compromissos %}
+        <tr>
+            <td>{{compromisso['data']}}</td>
+            <td>{{compromisso['descricao']}}</td>
+            <td></td>
+        </tr>
+        {{compromisso['descricao']}} <button onclick="removeItem({{compromisso['id']}})" type="submit">X</button> <button onclick="atualizarItem({{compromisso['id']}})" type="submit">Editar</button>
+            
+        {% endfor %}
+    </tbody>
+</table>
+    
+
+
+
+{% endblock %}
