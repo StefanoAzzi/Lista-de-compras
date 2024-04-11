@@ -21,17 +21,19 @@
             <th>Data</th>
             <th>Descrição</th>
             <th>Fim de semana</th>
+            <th>Editar</th>
+            <th>Excluir</th>
         </tr>
     </thead>
     <tbody>
         {% for compromisso in compromissos %}
         <tr>
-            <td>{{compromisso['data']}}</td>
+            <td>{{compromisso['data']|date("d/m/Y")}}</td>
             <td>{{compromisso['descricao']}}</td>
             <td>{{compromisso['fimDeSemana']}}</td>
+            <td><button onclick="atualizaCompromisso({{compromisso[id]}})">X</button></td>
+            <td><button onclick="removeCompromisso({{compromisso[id]}})">X</button></td>
         </tr>
-        {{compromisso['descricao']}} <button onclick="removeItem({{compromisso['id']}})" type="submit">X</button> <button onclick="atualizarItem({{compromisso['id']}})" type="submit">Editar</button>
-            
         {% endfor %}
     </tbody>
 </table>
