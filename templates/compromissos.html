@@ -31,14 +31,12 @@
             <td>{{compromisso['data']|date("d/m/Y")}}</td>
             <td>{{compromisso['descricao']}}</td>
             <td>{{compromisso['fimDeSemana']}}</td>
-            <td><button onclick="atualizaCompromisso({{compromisso[id]}})">X</button></td>
-            <td><button onclick="removeCompromisso({{compromisso[id]}})">X</button></td>
+            <td><button onclick="atualizarCompromisso({{compromisso['id']}})">X</button></td>
+            <td><button onclick="removeCompromisso({{compromisso['id']}})">X</button></td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
-    
 
-
-
+<script src="JS/script.js"></script>
 {% endblock %}
