@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `compras`.`compras` (
 CREATE TABLE IF NOT EXISTS `compras`.`compromissos` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `descricao` VARCHAR(255) NULL,
-  `data` DATETIME NOT NULL,
+  `data` DATE NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
 

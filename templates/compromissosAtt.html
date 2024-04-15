@@ -1,20 +1,17 @@
 {% extends "base.html" %}
 {% block conteudo %}
 <h2>Qual é seu novo valor?</h2>
-<form action="compromissosAtualizar.php" method="post">
+<form action="compromissosAtualizar.php" method="get">
     <p> 
         <label for="descricao">Descrição: </label>  
-        <input type="text" placeholder="{{compromisso['descricao']}}" name="descricao">
+        <input type="text" value="{{compromisso['descricao']}}" name="descricao">
     </p>
     <p>
         <label for="data">Data: </label>
-        <input type="date" placeholder="{{compromisso['data']}}" name="data">
+        <input type="date" value="{{compromisso['data']}}" name="data">
     </p>
+    <input type="hidden" value="{{compromisso['id']}}" name="id">
     <input type="submit" value='Atualizar'>
 </form>
-
-    
-
-
 
 {% endblock %}
