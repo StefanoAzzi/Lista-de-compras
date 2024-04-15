@@ -14,3 +14,14 @@ function removeCompromisso(id){
 function atualizarCompromisso(id){
     window.location.href = "compromissosAtt.php?id=" + id
 }
+
+function temCerteza(e){
+    e.preventDefault()
+    e.stopPropagation()
+
+    let reset = confirm("Você perderá todos os itens e compromissos salvos. Continuará mesmo assim?")
+
+    if(reset){
+        window.location.href = e.target.href
+    }
+}
